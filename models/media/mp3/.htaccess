@@ -1,0 +1,5 @@
+SetEnvIfNoCase Referer "^http://audiomu.local/" local_ref=1
+<Files "*.mp3">
+Order Allow,Deny
+Allow from env=local_ref
+</Files>

@@ -1,0 +1,134 @@
+/* larger canvas, spectrum + EQ visualization and other items */
+.ui360-vis,
+.ui360-vis .sm2-360ui,
+.sm2-inline-list .ui360-vis {
+ /* size of the container for the circle, etc. */
+ width:132px;
+ height:132px;
+}
+.ui360-vis {
+ position:relative;
+ /* a little extra spacing */
+ padding-top:1px;
+ padding-bottom:1px;
+ margin-bottom:-18px; /* approximate "line height" we want */
+ padding-left:248px;
+ margin-left:0px;
+ background-position:22.6% 50%; /* (~109px) initial play button position */
+}
+.sm2-inline-list .ui360-vis {
+ cursor:pointer
+}
+.ui360-vis a {
+ font:14px "helvetica neue",helvetica,monaco,lucida,terminal,monospace;
+ white-space:nowrap;
+ text-indent:0px; /* undo inline style */
+ top:46%; /* ehh. */
+}
+.sm2-inline-list .ui360-vis a {
+ line-height:256px;
+ top:auto;
+}
+.ui360-vis .sm2-360ui {
+ margin-left:-256px;
+}
+.ui360-vis .sm2-timing {
+ font:bold 14px "helvetica neue",helvetica,monaco,lucida,terminal,monospace;
+ color:#333;
+ text-align:center;
+ line-height:128px;
+ text-indent:0px;
+}
+.sm2-inline-list .ui360-vis,
+.sm2-inline-list .ui360-vis .sm2-360ui {
+ margin-left:0px;
+}
+.sm2-inline-list .ui360-vis {
+ margin:8px 13px 7px 0px;
+ padding-left:0px;
+ background-position:50% 50%; /* initial play button position */
+}
+
+.sm2-inline-list .ui360-vis .sm2-360ui {
+ border:1px solid #eee;
+ /* offset the border */
+ margin-left:-1px;
+ margin-top:-1px;
+}
+.sm2-inline-list .ui360-vis a {
+ position:absolute;
+ display:inline;
+ left:0px;
+ bottom:0px;
+ top:1px;
+ width:100%; /* 2px padding in box */
+ height:99%; /* dumb vertical hack */
+ *height:256px; /* IE is dumb. */
+ overflow:hidden;
+ font-size:small;
+ font-weight:300;
+ color:#333;
+ margin:0px;
+ padding:0px;
+ line-height:244px; /* bottom vertical alignment for text */
+ *line-height:244px; /* IE again */
+ text-align:center;
+ border-radius:0px;
+}
+.sm2-inline-list .ui360 a:hover {
+ background-color:transparent; /* reset */
+}
+.sm2-inline-list .ui360-vis:hover .sm2-360ui,
+.sm2-inline-list .ui360-vis a.sm2_link:hover,
+.sm2-inline-list .ui360-vis a.sm2_link:active,
+.sm2-inline-list .ui360-vis a.sm2_link:focus {
+ background-color:transparent;
+}
+.sm2-inline-list .ui360-vis:hover a.sm2_link {
+ background-color:#fafafa;
+ *background-color:transparent; /* eh, screw IE. */
+}
+/* Use a bigger loading image for this layout */
+.ui360-vis .sm2-360btn,
+.ui360-vis .sm2-360ui.sm2_paused .sm2-360btn,
+.ui360-vis .sm2-360ui.sm2_playing .sm2-360btn {
+ width:58px;
+ height:58px;
+ margin-left:-29px;
+ margin-top:-29px;
+ border-radius: none;
+}
+.ui360-vis,
+.ui360-vis .sm2-360ui.sm2_paused .sm2-360btn,
+.ui360-vis .sm2-360btn-default {
+ background:transparent url(audiomu-button-play.png) no-repeat 50% 50%;
+ background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAAA4CAYAAABHRFAgAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyppVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NjcyOSwgMjAxMi8wNS8wMy0xMzo0MDowMyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIEVsZW1lbnRzIDEyLjAgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2MjFEREIzNDFDNDIxMUU0QTVCREY3QUJDQjBDQzBGRiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2MjFEREIzNTFDNDIxMUU0QTVCREY3QUJDQjBDQzBGRiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjYyMUREQjMyMUM0MjExRTRBNUJERjdBQkNCMENDMEZGIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjYyMUREQjMzMUM0MjExRTRBNUJERjdBQkNCMENDMEZGIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+bQANWAAABl1JREFU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);
+ *background-image:url(audiomu-button-play.png);
+ _background:transparent url(audiomu-button-play.gif) no-repeat 50% 50%;
+ cursor:pointer;
+}
+.ui360-vis:hover .sm2-360btn,
+.ui360-vis .sm2-360btn-default:hover,
+.ui360-vis .sm2-360ui.sm2_paused .sm2-360btn:hover {
+ background:transparent url(360-button-vis-play-light.png) no-repeat 50% 50%;
+ _background:transparent url(360-button-vis-play.gif) no-repeat 50% 50%;
+ cursor:pointer;
+}
+.ui360-vis .sm2-360ui.sm2_playing .sm2-360btn:hover,
+.ui360-vis .sm2-360btn-playing:hover {
+ background:transparent url(360-button-vis-pause-light.png) no-repeat 50% 50%;
+ _background:transparent url(360-button-vis-pause-light.gif) no-repeat 50% 50%;
+ cursor:pointer;
+}
+.ui360-vis {
+ /* non-JS / before-loaded state */
+ background-position: 21% 50%;
+ _background:transparent url(360-button-vis-play.gif) no-repeat 21% 50%; /* IE 6-only: special crap GIF */
+}
+.ui360-vis .sm2-360btn-default {
+ /* real button, post-loaded state */
+ _background:transparent url(360-button-vis-play.gif) no-repeat 50% 50%; /* IE 6-only: special crap GIF */
+}
+.ui360-vis .sm2-360ui.sm2_dragging .sm2-360btn {
+ visibility: hidden;
+}

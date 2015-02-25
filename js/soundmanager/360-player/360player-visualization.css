@@ -1,0 +1,134 @@
+/* larger canvas, spectrum + EQ visualization and other items */
+.ui360-vis,
+.ui360-vis .sm2-360ui,
+.sm2-inline-list .ui360-vis {
+ /* size of the container for the circle, etc. */
+ width:128px;
+ height:128px;
+}
+.ui360-vis {
+ position:relative;
+ /* a little extra spacing */
+ padding-top:1px;
+ padding-bottom:1px;
+ margin-bottom:-9px; /* approximate "line height" we want */
+ padding-left:124px;
+ margin-left:0px;
+ background-position:22.6% 50%; /* (~109px) initial play button position */
+}
+.sm2-inline-list .ui360-vis {
+ cursor:pointer
+}
+.ui360-vis a {
+ font:14px "helvetica neue",helvetica,monaco,lucida,terminal,monospace;
+ white-space:nowrap;
+ text-indent:0px; /* undo inline style */
+ top:46%; /* ehh. */
+}
+.sm2-inline-list .ui360-vis a {
+ line-height:128px;
+ top:auto;
+}
+.ui360-vis .sm2-360ui {
+ margin-left:-128px;
+}
+.ui360-vis .sm2-timing {
+ font:bold 12px "helvetica neue",helvetica,monaco,lucida,terminal,monospace;
+ color:#333;
+ text-align:center;
+ line-height:128px;
+ text-indent:0px;
+}
+.sm2-inline-list .ui360-vis,
+.sm2-inline-list .ui360-vis .sm2-360ui {
+ margin-left:0px;
+}
+.sm2-inline-list .ui360-vis {
+ /*margin:8px 13px 7px 0px;*/
+ margin:5px 0px 15px;
+ padding-left:0px;
+ background-position:50% 50%; /* initial play button position */
+}
+.sm2-inline-list .ui360-vis .sm2-360ui {
+ border:1px solid #eee;
+ /* offset the border */
+ margin-left:-1px;
+ margin-top:-1px;
+}
+.sm2-inline-list .ui360-vis a {
+ position:absolute;
+ display:inline;
+ left:0px;
+ bottom:0px;
+ top:1px;
+ width:100%; /* 2px padding in box */
+ height:99%; /* dumb vertical hack */
+ *height:128px; /* IE is dumb. */
+ overflow:hidden;
+ font-size:small;
+ font-weight:300;
+ color:#333;
+ margin:0px;
+ padding:0px;
+ line-height:244px; /* bottom vertical alignment for text */
+ *line-height:240px; /* IE again */
+ text-align:center;
+ border-radius:0px;
+}
+.sm2-inline-list .ui360 a:hover {
+ background-color:transparent; /* reset */
+}
+.sm2-inline-list .ui360-vis:hover .sm2-360ui,
+.sm2-inline-list .ui360-vis a.sm2_link:hover,
+.sm2-inline-list .ui360-vis a.sm2_link:active,
+.sm2-inline-list .ui360-vis a.sm2_link:focus {
+ background-color:transparent;
+}
+.sm2-inline-list .ui360-vis:hover a.sm2_link {
+ background-color:#fafafa;
+ *background-color:transparent; /* eh, screw IE. */
+}
+/* Use a bigger loading image for this layout */
+.ui360-vis .sm2-360btn,
+.ui360-vis .sm2-360ui.sm2_paused .sm2-360btn,
+.ui360-vis .sm2-360ui.sm2_playing .sm2-360btn {
+ width:48px;
+ height:48px;
+ margin-left:-24px;
+ margin-top:-24px;
+ border-radius: none;
+}
+.ui360-vis,
+.ui360-vis .sm2-360ui.sm2_paused .sm2-360btn,
+.ui360-vis .sm2-360btn-default {
+ background:transparent url(360-button-vis-play.png) no-repeat 50% 50%;
+ background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3lpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NjcyOSwgMjAxMi8wNS8wMy0xMzo0MDowMyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wUmlnaHRzPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvcmlnaHRzLyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcFJpZ2h0czpNYXJrZWQ9IkZhbHNlIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBFbGVtZW50cyAxMi4wIFdpbmRvd3MiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QkRDQzM2QzAwOTVDMTFFNEJGMEVFNzUzRThCRDRBOTYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QkRDQzM2QzEwOTVDMTFFNEJGMEVFNzUzRThCRDRBOTYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpCRENDMzZCRTA5NUMxMUU0QkYwRUU3NTNFOEJENEE5NiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpCRENDMzZCRjA5NUMxMUU0QkYwRUU3NTNFOEJENEE5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);
+ *background-image:url(360-button-vis-play.png);
+ _background:transparent url(360-button-vis-play.gif) no-repeat 50% 50%;
+ cursor:pointer;
+}
+.ui360-vis:hover .sm2-360btn,
+.ui360-vis .sm2-360btn-default:hover,
+.ui360-vis .sm2-360ui.sm2_paused .sm2-360btn:hover {
+ background:transparent url(360-button-vis-play-light.png) no-repeat 50% 50%;
+ _background:transparent url(360-button-vis-play.gif) no-repeat 50% 50%;
+ cursor:pointer;
+}
+.ui360-vis .sm2-360ui.sm2_playing .sm2-360btn:hover,
+.ui360-vis .sm2-360btn-playing:hover {
+ background:transparent url(360-button-vis-pause-light.png) no-repeat 50% 50%;
+ _background:transparent url(360-button-vis-pause-light.gif) no-repeat 50% 50%;
+ cursor:pointer;
+}
+.ui360-vis {
+ /* non-JS / before-loaded state */
+ background-position: 21% 50%;
+ _background:transparent url(360-button-vis-play.gif) no-repeat 21% 50%; /* IE 6-only: special crap GIF */
+}
+.ui360-vis .sm2-360btn-default {
+ /* real button, post-loaded state */
+ _background:transparent url(360-button-vis-play.gif) no-repeat 50% 50%; /* IE 6-only: special crap GIF */
+}
+.ui360-vis .sm2-360ui.sm2_dragging .sm2-360btn {
+ visibility: hidden;
+}
